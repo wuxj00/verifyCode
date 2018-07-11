@@ -96,10 +96,10 @@
                 });
             },
             getRandomPosition(){
-                const w = width - len -radius - radius * 2;
-                const h = height - len - radius - radius *2;
-                return [Math.floor(w * Math.random()),
-                    Math.floor(h * Math.random())];
+                const w = width/2 - len - radius * 2;
+                const h = height - len - radius *2 - 10;
+                return [Math.floor(w * Math.random() + width/2),
+                    Math.floor(h * Math.random()) + 10];
             },
             mousedown(e) {
                 this.origin = [e.x + radius, e.y + radius];

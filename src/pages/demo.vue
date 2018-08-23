@@ -4,8 +4,9 @@
             <slider-verify></slider-verify>
         </div>
         <div style="padding-left: 40px;">
-            <pic-verify></pic-verify>
+            <pic-verify ></pic-verify>
         </div>
+        <div>{{a | getKey('b') | getKey('c') | getKey('d')}}</div>
     </div>
 </template>
 
@@ -15,11 +16,22 @@
 
     export default {
         name: "demo",
-        components:{
+        components: {
             SliderVerify,
-            PicVerify
+            PicVerify,
+        },
+        data() {
+            return {
+                a: {
+                    b: {
+                        c: {
+                            d: 123
+                        }
+                    },
+                }
+            };
         }
-    }
+    };
 </script>
 
 <style scoped>

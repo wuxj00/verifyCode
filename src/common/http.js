@@ -27,7 +27,7 @@ http.interceptors.response.use(
         return response;
     },
     (error) => {
-        let msg ='';
+        let msg = '';
         if (error.response) {
             switch (error.response.status) {
                 case 302:
@@ -53,6 +53,6 @@ http.interceptors.response.use(
                     break;
             }
         }
-        return Promise.reject(error);
+        return Promise.reject(msg);
     });
 export default http;
